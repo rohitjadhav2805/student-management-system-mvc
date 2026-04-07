@@ -1,0 +1,52 @@
+﻿@model MVCWithLinq1.Models.Student
+
+<h2 class="text-center bg-success text-white py-2 rounded">Add New Student</h2>
+
+<div class="container mt-4">
+    <div class="card shadow-lg mx-auto" style="max-width:500px;">
+        <div class="card-body">
+
+            @using (Html.BeginForm("AddStudent", "Student", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="mb-3">
+                    @Html.LabelFor(s => s.Name, new { @class = "form-label fw-bold" })
+                    @Html.TextBoxFor(s => s.Name, new { @class = "form-control", placeholder = "Enter Name" })
+                    @Html.ValidationMessageFor(s => s.Name, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(s => s.Age, new { @class = "form-label fw-bold" })
+                    @Html.TextBoxFor(s => s.Age, new { @class = "form-control", placeholder = "Enter Age" })
+                    @Html.ValidationMessageFor(s => s.Age, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(s => s.Class, new { @class = "form-label fw-bold" })
+                    @Html.TextBoxFor(s => s.Class, new { @class = "form-control", placeholder = "Enter Class" })
+                    @Html.ValidationMessageFor(s => s.Class, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(s => s.Fees, new { @class = "form-label fw-bold" })
+                    @Html.TextBoxFor(s => s.Fees, new { @class = "form-control", placeholder = "Enter Fees" })
+                    @Html.ValidationMessageFor(s => s.Fees, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(s => s.Photo, new { @class = "form-label fw-bold" })
+                    <input type="file" name="selectedFile" class="form-control" />
+                </div>
+
+                <div class="d-grid gap-2">
+                    <input type="submit" value="💾 Save" class="btn btn-success fw-bold" />
+                    <input type="reset" value="🔄 Reset" class="btn btn-outline-secondary" />
+                </div>
+            }
+
+        </div>
+    </div>
+
+    <div class="text-center mt-3">
+        @Html.ActionLink("⬅ Back to Student Details", "DisplayStudents", null, new { @class = "btn btn-secondary" })
+    </div>
+</div>

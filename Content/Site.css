@@ -1,0 +1,89 @@
+﻿/* 🌈 BODY */
+body {
+    background: linear-gradient(135deg, #e3f2fd, #e8f5e9) !important;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* 🔷 NAVBAR */
+.navbar {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important;
+}
+
+/* 📦 CONTENT BOX */
+.body-content {
+    background: white !important;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* 📊 TABLE */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    .table thead {
+        background: linear-gradient(45deg, #343a40, #212529) !important;
+        color: white !important;
+    }
+
+    .table tbody tr:hover {
+        background-color: #f1f1f1 !important;
+    }
+
+/* 🔘 BUTTONS */
+.btn {
+    border-radius: 25px !important;
+    transition: 0.3s;
+}
+
+    .btn:hover {
+        transform: scale(1.1);
+    }
+
+.btn-success {
+    background-color: #28a745 !important;
+}
+
+.btn-danger {
+    background-color: #dc3545 !important;
+}
+
+.btn-warning {
+    background-color: #ffc107 !important;
+}
+
+.btn-info {
+    background-color: #17a2b8 !important;
+}
+
+/* 🖼 IMAGE */
+img {
+    border-radius: 10px !important;
+    border: 2px solid #28a745 !important;
+}
+
+/* 🧾 HEADING */
+h2 {
+    background: linear-gradient(45deg, #28a745, #007bff);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* 📎 FOOTER */
+footer {
+    text-align: center;
+    color: gray;
+}

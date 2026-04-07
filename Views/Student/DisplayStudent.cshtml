@@ -1,0 +1,55 @@
+﻿@model MVCWithLinq1.Models.Student
+
+<h2 class="text-center bg-primary text-white py-2 rounded">Student Details</h2>
+
+<div class="container mt-4">
+    <div class="card shadow mx-auto" style="max-width:500px;">
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Id</th>
+                    <td>@Model.Sid</td>
+                </tr>
+
+                <tr>
+                    <th>Name</th>
+                    <td>@Model.Name</td>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <td>@Model.Age</td>
+                </tr>
+                <tr>
+                    <th>Class</th>
+                    <td>@Model.Class</td>
+                </tr>
+
+                <tr>
+                    <th>Fees</th>
+                    <td class="text-success fw-bold">₹@Model.Fees</td>
+                </tr>
+                <tr>
+                    <th>Photo</th>
+                    <td class="text-center">
+                        @if (!string.IsNullOrEmpty(Model.Photo))
+                        {
+                            <img src="/Uploads/@Model.Photo"
+                                 class="img-thumbnail rounded"
+                                 width="100" height="100" />
+                        }
+                        else
+                        {
+                            <span class="text-muted">No Image</span>
+                        }
+                    </td>
+                </tr>
+            </table>
+            <div class="text-center mt-3">
+                <a href="@Url.Action("DisplayStudents")" class="btn btn-secondary">
+                    ⬅ Back
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

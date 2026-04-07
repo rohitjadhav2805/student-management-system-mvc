@@ -1,0 +1,11 @@
+﻿# Ignore uploads
+MVCWithLinq1/Uploads/
+
+# Ignore build folders
+bin/
+obj/
+
+# User and VS files
+*.user
+*.suo
+*.vs

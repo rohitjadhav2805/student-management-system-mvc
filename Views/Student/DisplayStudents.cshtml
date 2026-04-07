@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MVCWithLinq1.Models.Student>
+
+<h2 class="text-center bg-success text-white py-2 rounded">Student Details</h2>
+
+<div class="container mt-4">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped align-middle text-center shadow">
+
+            <thead class="table-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(S => S.Sid)</th>
+                    <th>@Html.DisplayNameFor(S => S.Name)</th>
+                    <th>@Html.DisplayNameFor(s=>s.Age)</th>
+                    <th>@Html.DisplayNameFor(S => S.Class)</th>
+                    <th>@Html.DisplayNameFor(S => S.Fees)</th>
+                    <th>@Html.DisplayNameFor(S => S.Photo)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in Model)
+                {
+                    <tr>
+                        <td class="fw-bold">@student.Sid</td>
+                        <td>@student.Name</td>
+                        <td>@student.Age</td>
+                        <td>@student.Class</td>
+                        <td class="text-success fw-semibold">₹@student.Fees</td>
+
+                        <td>
+                            <img src="/Uploads/@student.Photo"
+                                 class="img-thumbnail rounded"
+                                 width="60" height="50" />
+                        </td>
+
+                        <td>
+                            <a href="@Url.Action("DisplayStudent", new { Sid = student.Sid })"
+                               class="btn btn-info btn-sm me-1">View</a>
+
+                            <a href="@Url.Action("EditStudent", new { Sid = student.Sid })"
+                               class="btn btn-warning btn-sm me-1">Edit</a>
+
+                            <a href="@Url.Action("DeleteStudent", new { Sid = student.Sid })"
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('Are you sure?')">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+                                
+        </table>
+    </div>
+
+    <div class="text-center mt-3">
+        <a href="@Url.Action("AddStudent")" class="btn btn-success px-4">
+            ➕ Add New Student
+        </a>
+    </div>
+</div>

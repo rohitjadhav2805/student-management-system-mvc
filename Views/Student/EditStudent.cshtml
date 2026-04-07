@@ -1,0 +1,60 @@
+﻿@model MVCWithLinq1.Models.Student
+@{
+    ViewBag.Title = "EditStudent";
+}
+
+<h2 class="text-center bg-primary text-white py-2 rounded">Edit Student</h2>
+
+<div class="container mt-4">
+    <div class="card shadow-lg mx-auto" style="max-width:500px;">
+        <div class="card-body">
+            
+            @using (Html.BeginForm("UpdateStudent", "Student", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.HiddenFor(s => s.Sid)
+                @Html.HiddenFor(m => m.Photo)
+
+                <div class="mb-3">
+                    @Html.LabelFor(s => s.Name, new { @class = "form-label fw-bold" })
+                    @Html.TextBoxFor(s => s.Name, new { @class = "form-control", placeholder = "Enter Name" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(s => s.Age, new { @class = "form-label fw-bold" })
+                    @Html.TextBoxFor(s => s.Age, new { @class = "form-control", placeholder = "Enter Age" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(s => s.Class, new { @class = "form-label fw-bold" })
+                    @Html.TextBoxFor(s => s.Class, new { @class = "form-control", placeholder = "Enter Class" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(s => s.Fees, new { @class = "form-label fw-bold" })
+                    @Html.TextBoxFor(s => s.Fees, new { @class = "form-control", placeholder = "Enter Fees" })
+                </div>
+
+                <div>
+                    @Html.LabelFor(S => S.Photo)
+                    <br />
+                    <img src="~/Uploads/@Model.Photo"
+                         height="50" width="50"
+                         class="img-thumbnail" />
+
+                    @Html.HiddenFor(m => m.Photo)
+
+                    <input type="file" name="selectedFile" class="form-control mt-2" />
+                </div>
+
+                <div class="d-grid">
+                    <input type="submit" value="Update" class="btn btn-success fw-bold" />
+                </div>
+            }
+
+        </div>
+    </div>
+
+    <div class="text-center mt-3">
+        @Html.ActionLink("⬅ Back to Student Details", "DisplayStudents", null, new { @class = "btn btn-secondary" })
+    </div>
+</div>
